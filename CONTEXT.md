@@ -1,4 +1,4 @@
-# lean-grok
+# walk-me-through-lean
 
 A Claude skill that explains a Lean 4 proof to its reader in a guided chat dialogue. It follows the structure of "Anatomy of a Lean Proof" and writes in ASD-STE100 (Simplified Technical English).
 
@@ -31,6 +31,10 @@ _Avoid_: Tour, walkthrough, explanation
 **Turn**:
 One message from the skill in the Walk. At most 3 sentences of prose, plus at most 2 code blocks of at most 10 lines each.
 _Avoid_: Reply, response, chunk
+
+**Moves list**:
+The list at the end of every Turn of the moves the reader can make now. Its first item names the Turn that "next" leads to.
+_Avoid_: Prompt, menu, options
 
 **Step**:
 One tactic, one tactic combinator chain, or one proof term in the Subject's proof. Each Step gets its own Turn with the Goal State after it.
@@ -69,7 +73,7 @@ A Goal State shown with coercions removed, with only the relevant side displayed
 _Avoid_: Simplified, cleaned, abridged
 
 **Figure**:
-A diagram of a structure in the Subject, offered by the skill when a picture shows it better than prose, and drawn only when the reader says yes.
+A diagram of a structure in the Subject, offered in the Moves list when a picture shows it better than prose, and drawn only when the reader asks for it.
 _Avoid_: Diagram, image, illustration
 
 **Tactic note**:

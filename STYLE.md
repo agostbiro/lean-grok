@@ -2,7 +2,7 @@
 
 ## Turn limits
 
-- At most 3 sentences of prose per Turn.
+- At most 3 sentences of prose per Turn. The Moves list is not prose.
 - At most 2 code blocks per Turn, at most 10 lines each.
 - A Goal State over 10 lines is Trimmed: keep the goal and the hypotheses the Step touched, drop coercions such as `↑` and `.toNat`, and show one side of an `↔` when the other side did not change. Every Trimmed Goal State says so.
 
@@ -15,6 +15,20 @@ h : carryIn = true
 ```
 
 The first line carries the Step, the tag (`Verified` or `Reconstructed`), and the editor line. Add `· Trimmed` to the tag when the state is Trimmed.
+
+## Moves list
+
+Every Turn ends with a Moves list: the moves the user can make now, one per bullet, at most 4 bullets.
+
+- The first bullet is "next" and names the Turn it leads to, such as the Plan or the Step's first tactic. The last Step has no "next" bullet.
+- Each other bullet is a move from section 6 of `SKILL.md` that applies at this Turn. It names its object: the Helper to enter, the tactic to explain, the proof term to break down, the thing a Figure shows.
+
+```markdown
+- "next": Step 2, `cases w <;> cases k <;> cases c`
+- "enter `interlock_step`": the Walk of this Helper
+- "what does `simp_all` do": a Tactic note
+- "figure": the case tree of the three `cases`
+```
 
 ## Prose: ASD-STE100 rules
 

@@ -13,13 +13,13 @@ If an LSP tool is available in the session and a Lean server is configured for t
 
 Requires a `lakefile.lean` or `lakefile.toml` at the project root and a built project (`.lake/build` exists). Never edit the user's source file.
 
-1. Copy the Subject's file to the scratchpad directory, for example `<scratchpad>/lean-grok/Subject.lean`.
+1. Copy the Subject's file to the scratchpad directory, for example `<scratchpad>/walk-me-through-lean/Subject.lean`.
 2. In the copy, after every tactic line of the Subject's proof, insert a line `trace_state` at the same indentation. For a combinator chain such as `cases x <;> simp`, insert `trace_state` after the whole chain. Inside a `cases ... with | a => tac | b => tac` arm, insert it after the arm's last tactic.
 3. For each Library lemma the proof uses, append `#check @<name>` at the end of the copy.
 4. Run from the project root:
 
    ```sh
-   cd <project-root> && lake env lean <scratchpad>/lean-grok/Subject.lean
+   cd <project-root> && lake env lean <scratchpad>/walk-me-through-lean/Subject.lean
    ```
 
 5. Parse the output. Each `trace_state` prints an `info: ...:L:C:` block with the hypotheses and the `⊢` goal at that point. Match blocks to Steps in order. Each `#check` prints the signature on one `info:` line.
