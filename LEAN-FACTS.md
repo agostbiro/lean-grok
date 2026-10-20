@@ -45,7 +45,7 @@ Requires a `lakefile.lean` or `lakefile.toml` at the project root and a built pr
 ### When a probe fails
 
 - **Type mismatch at a wrapped right side.** The wrap breaks a right side that needs a coercion, such as a `Nat` where Lean expects an `Int`. Replace the right side with `_` instead. Lean reports "don't know how to synthesize placeholder" with the same names and `⊢` line. The error stops the checks of later code that uses the declaration, so use one `_` per compile.
-- **The copy depends on its own module name.** Add the original file's directory to the import path, or move the copy next to the original under a name such as `_lean_grok_scratch.lean`, then delete it when done.
+- **The copy depends on its own module name.** Add the original file's directory to the import path, or move the copy next to the original under a name such as `_walk_me_through_lean_scratch.lean`, then delete it when done.
 
 ### Clean the output for a Type View
 
