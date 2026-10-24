@@ -63,9 +63,14 @@ Facts from sources 1 and 2 are tagged `Verified`. Facts from source 3 are tagged
 
 "Run it" is offered only when Lean is available and the function is outside `IO`, can print its result, and has no `sorry`. Lean runs `#eval` at compile time, so `IO` effects would run on your machine.
 
+## Lean style for agents
+
+To make your project's code easy to walk, copy the rules in [`LEAN-STYLE-AGENTS.md`](LEAN-STYLE-AGENTS.md) into your project's `AGENTS.md`.
+
 ## Files
 
 - [`SKILL.md`](SKILL.md): the skill's main instructions
+- [`LEAN-STYLE-AGENTS.md`](LEAN-STYLE-AGENTS.md): Lean style rules to copy into your project's `AGENTS.md`
 - [`STYLE.md`](STYLE.md): turn format and prose rules
 - [`LEAN-FACTS.md`](LEAN-FACTS.md): how to get facts out of Lean
 - [`CONTEXT.md`](CONTEXT.md): the skill's vocabulary
